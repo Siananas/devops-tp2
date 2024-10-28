@@ -1,7 +1,8 @@
-name: CI devops 2024 - deploy
+name: deploy
+
 on:
   workflow_run:
-    workflows: ["CI devops 2024 - build"]
+    workflows: ["build"]
     branches: ["main"]
     types:
       - completed

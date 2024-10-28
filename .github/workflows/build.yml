@@ -1,4 +1,5 @@
-name: CI devops 2024 - build
+name: build
+
 on:
   push:
     branches:
