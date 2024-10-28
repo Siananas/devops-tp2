@@ -8,6 +8,7 @@ on:
 
 jobs:
   test-backend:
+    environment: deployment
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2.5.0
@@ -17,7 +18,7 @@ jobs:
           distribution: corretto
           java-version: '17'
       - name: Build and test with Maven
-        run: mvn clean verify -f simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=Siananas_devops-tp2 -Dsonar.organization=siananas -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
   build-and-push-docker-image:
     needs: test-backend
