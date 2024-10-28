@@ -3,9 +3,8 @@ name: deploy
 on:
   workflow_run:
     workflows: ["build"]
-    branches: ["main"]
-    types:
-      - completed
+    branches:
+      - main
 
 jobs:
   build-and-push-docker-image:
