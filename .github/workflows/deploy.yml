@@ -6,6 +6,8 @@ on:
   pull_request:
   workflow_run:
     workflows: ["CI devops 2024 - build"]
+    types:
+      - completed
 
 jobs:
   build-and-push-docker-image:
