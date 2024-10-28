@@ -1,7 +1,5 @@
 name: CI devops 2024 - deploy
 on:
-  push:
-  pull_request:
   workflow_run:
     workflows: ["CI devops 2024 - build"]
     branches: ["main"]
